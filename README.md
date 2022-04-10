@@ -6,7 +6,7 @@ This python script converts Online Vitalsource Ebooks into PDF format. This is a
 ### Prerequisites 
 I have inclueded a compilied version of my python code in this repository. If you do not wish to make changes to this code or do not want to worry about dependencies please use the executable. NOTE: You will still need a Chrome version 81.x installed. If you decide to run the python code you will need to install a few selective python packages. This script utilizes selenium with chromedriver. The current tested chromedriver is for Chrome version 81. If you are using an older version you can download and attempt to replace chromedriver.exe with the older chromedriver. NOTE: This has not been tested. This tool was specifically designed for a Windows environment so some changes will need to be made if you are using an alternative environment. Python dependencies can be installed  via:
 ```
-pip install json
+* pip install json // Not required with Python3, it's included
 pip install selenium
 ```
 ### Usage
@@ -28,3 +28,6 @@ Success!
 Your PDF should be located in your downloads folder.
 ```
 
+### Update from April 11, 2022
+
+1) Updated ChromeDriver 100.0.4896.60 to support Chrome version 100

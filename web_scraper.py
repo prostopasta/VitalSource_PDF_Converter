@@ -35,14 +35,14 @@ class Scraper:
  
     def scrape_page(self):
 
-        print("Loging in....")
+        print("Logging in....")
         
         login_page = self.webpage.split("/#/")[0]
           
         self.driver.get(login_page)
         
-        self.driver.find_element_by_id("email-field").send_keys("%s" % self.username)
-        password_field = self.driver.find_element_by_id("password-field").send_keys("%s" % self.password)
+        self.driver.find_element(by="email-field").send_keys("%s" % self.username)
+        password_field = self.driver.find_element(by="password-field").send_keys("%s" % self.password)
         self.driver.execute_script('document.getElementById("signin-form").submit()')
         
         time.sleep(5)
@@ -55,10 +55,10 @@ class Scraper:
         print("Scraping Webpage...")
         self.driver.get(self.webpage)
         time.sleep(10)
-        seq = self.driver.find_elements_by_tag_name('iframe')
+        seq = self.driver.find_elements(by='iframe')
         self.driver.switch_to.frame(seq[1])
         html_page = self.driver.page_source
-        book_content = self.driver.find_element_by_id('epub-content')
+        book_content = self.driver.find_element(by='epub-content')
         self.driver.switch_to.frame(book_content)
         book_source = self.driver.page_source
        
